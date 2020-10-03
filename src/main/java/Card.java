@@ -6,8 +6,37 @@
 
 /**
  *
- * @author julio
+ * @author Julio Cesar Santaman Cruz.
  */
 public class Card {
+    // Atributos.
+    private String palo;
+    private String color;
+    private String valor;
     
+    // Métodos getters.
+    public String getPalo() {
+        return palo;
+    }
+    
+    public String getColor() {
+        return color;
+    }
+    
+    public String getValor() {
+        return valor;
+    }
+    
+    // Métodos setters.
+    public void setPalo(String palo) {
+        this.palo = palo;
+    }
+    
+    public void setColor(String color) {
+        this.color = color;
+    }
+    
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
 }
