@@ -108,6 +108,9 @@ public class Deck {
         System.out.println();
     }
     
+    /*
+    Método que muestra todas las cartas existentes en el Deck.
+    */
     public void mostrarCartas() {
         for(int i=0; i<deckList.size()-1; i++) {
             System.out.println("Palo: " + deckList.get(i).getPalo() + ", Color: " + deckList.get(i).getColor()
