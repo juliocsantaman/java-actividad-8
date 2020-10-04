@@ -57,6 +57,41 @@ public class Deck {
     Método que mezcla el Deck.
     */
     public void shuffle() {
+        List<Card> manoIzq = new ArrayList<>();
+        List<Card> manoDer = new ArrayList<>();
+        boolean bandera = false;
+        /*
+        Divido el Deck en dos partes,
+        la mano izquierda tiene la primera mitad
+        y la mano derecha tiene la mitad restante.
+        */
+        for(int i=0; i<52; i++) {
+            if(i<26) {
+                manoIzq.add(deckList.get(i));
+            } else {
+                manoDer.add(deckList.get(i));
+            }
+        }
+        // Elimino las cartas.
+        deckList.clear();
+        /*
+        Agrego las cartas de manera intercalada,
+        es decir, una carta de la mano izquierda
+        y una de la mano derecha.
+        */
+        int c1=0, c2=0;
+        for(int i=0; i<52; i++) {
+            if(!bandera) {
+                deckList.add(manoIzq.get(c1));
+                c1++;
+                bandera = true;
+            } else {
+                deckList.add(manoDer.get(c2));
+                c2++;
+                bandera = false;
+            }
+        }
+        
         System.out.println("Método utilizado: shuffle.");
         System.out.println("Se mezcló el Deck.");
         System.out.println();
@@ -112,7 +147,7 @@ public class Deck {
     Método que muestra todas las cartas existentes en el Deck.
     */
     public void mostrarCartas() {
-        for(int i=0; i<deckList.size()-1; i++) {
+        for(int i=0; i<deckList.size(); i++) {
             System.out.println("Palo: " + deckList.get(i).getPalo() + ", Color: " + deckList.get(i).getColor()
         + ", Valor: " + deckList.get(i).getValor());
         }
