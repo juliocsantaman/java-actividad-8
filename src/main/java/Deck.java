@@ -144,7 +144,7 @@ public class Deck {
     }
     
     /*
-    Método que muestra todas las cartas existentes en el Deck.
+    Método que muestra todas las cartas existentes del Deck.
     */
     public void mostrarCartas() {
         for(int i=0; i<deckList.size(); i++) {
