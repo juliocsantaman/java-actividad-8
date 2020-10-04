@@ -17,6 +17,9 @@ public class Main {
         // Creamos un objeto de tipo Deck.
         Deck deck = new Deck();
         
+        // Mostramos las cartas creadas.
+        deck.mostrarCartas();
+        
         // Usamos los métodos de la clase Deck.
         deck.shuffle();
         deck.head();
