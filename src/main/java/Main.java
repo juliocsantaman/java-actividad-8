@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
+        System.out.println("***** CARTAS DE POKER *****");
         // Creamos un objeto de tipo Deck.
         Deck deck = new Deck();
         

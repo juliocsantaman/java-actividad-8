@@ -147,6 +147,7 @@ public class Deck {
     Método que muestra todas las cartas existentes del Deck.
     */
     public void mostrarCartas() {
+        System.out.println("Mostrando las cartas creadas");
         for(int i=0; i<deckList.size(); i++) {
             System.out.println("Palo: " + deckList.get(i).getPalo() + ", Color: " + deckList.get(i).getColor()
         + ", Valor: " + deckList.get(i).getValor());
