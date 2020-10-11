@@ -14,18 +14,9 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("***** CARTAS DE POKER *****");
         // Creamos un objeto de tipo Deck.
         Deck deck = new Deck();
-        
-        // Mostramos las cartas creadas.
-        deck.mostrarCartas();
-        
-        // Usamos los métodos de la clase Deck.
-        deck.shuffle();
-        deck.head();
-        deck.pick();
-        deck.hand();
+        // Utilizamos el método que muestra el menú interactivo.
+        deck.showMenu();
     }
-    
 }
