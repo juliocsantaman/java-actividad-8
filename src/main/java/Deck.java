@@ -129,7 +129,7 @@ public class Deck {
     }
 
     /*
-    Método que muestra uh menú interactivo.
+    Método que muestra un menú interactivo.
      */
     public void showMenu() {
         int opcion;
