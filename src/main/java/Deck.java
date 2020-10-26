@@ -72,46 +72,70 @@ public class Deck {
     Método que muestra la primera carta del Deck
     y la remueve.
      */
-    public void head() {
-        System.out.println("Método utilizado: head.");
-        System.out.println("Palo: " + deckList.get(0).getPalo() + ", Color: " + deckList.get(0).getColor()
-                + ", Valor: " + deckList.get(0).getValor());
-        deckList.remove(0);
-        System.out.println("Quedan " + deckList.size() + " cartas.");
-        System.out.println();
+    public void head() throws Exception {
+        try {
+            System.out.println("Método utilizado: head.");
+            System.out.println("Palo: " + deckList.get(0).getPalo() + ", Color: " + deckList.get(0).getColor()
+                    + ", Valor: " + deckList.get(0).getValor());
+            deckList.remove(0);
+            System.out.println("Quedan " + deckList.size() + " cartas.");
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Se han agotado las cartas.");
+            System.out.println("Aplicación finalizada.");
+            System.exit(0);
+        }
+
     }
 
     /*
     Método que muestra una carta al azar
     y la remueve.
      */
-    public void pick() {
-        System.out.println("Método utilizado: pick.");
-        int cartaRandom = (int) (Math.random() * (deckList.size() - 1) + 0);
-        System.out.println("Palo: " + deckList.get(cartaRandom).getPalo() + ", Color: " + deckList.get(cartaRandom).getColor()
-                + ", Valor: " + deckList.get(cartaRandom).getValor());
-        deckList.remove(cartaRandom);
-        System.out.println("Quedan " + deckList.size() + " cartas.");
-        System.out.println();
+    public void pick() throws Exception {
+        try {
+            System.out.println("Método utilizado: pick.");
+            int cartaRandom = (int) (Math.random() * (deckList.size() - 1) + 0);
+            System.out.println("Palo: " + deckList.get(cartaRandom).getPalo() + ", Color: " + deckList.get(cartaRandom).getColor()
+                    + ", Valor: " + deckList.get(cartaRandom).getValor());
+            deckList.remove(cartaRandom);
+            System.out.println("Quedan " + deckList.size() + " cartas.");
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Se han agotado las cartas.");
+            System.out.println("Aplicación finalizada.");
+            System.exit(0);
+        }
+
     }
 
     /*
     Método que regresa cinco cartas
     del Deck y las remueve.
      */
-    public void hand() {
-        System.out.println("Método utilizado: hand.");
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Palo: " + deckList.get(i).getPalo() + ", Color: " + deckList.get(i).getColor()
-                    + ", Valor: " + deckList.get(i).getValor());
+    public void hand() throws Exception {
+        try {
+            System.out.println("Método utilizado: hand.");
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Palo: " + deckList.get(i).getPalo() + ", Color: " + deckList.get(i).getColor()
+                        + ", Valor: " + deckList.get(i).getValor());
+            }
+
+            for (int i = 0; i < 5; i++) {
+                deckList.remove(0);
+            }
+
+            System.out.println("Quedan " + deckList.size() + " cartas.");
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Se han agotado las cartas.");
+            System.out.println("Aplicación finalizada.");
+            System.exit(0);
         }
 
-        for (int i = 0; i < 5; i++) {
-            deckList.remove(i);
-        }
-
-        System.out.println("Quedan " + deckList.size() + " cartas.");
-        System.out.println();
     }
 
     /*
@@ -131,45 +155,52 @@ public class Deck {
     /*
     Método que muestra un menú interactivo.
      */
-    public void showMenu() {
+    public void showMenu() throws Exception {
         int opcion;
         String res = "";
-
         do {
-            System.out.println("¡Bienvenido al Poker!");
-            System.out.println("Seleciona una opción: ");
-            System.out.println("1. Mezclar Deck.");
-            System.out.println("2. Sacar una carta.");
-            System.out.println("3. Carta al azar.");
-            System.out.println("4. Generar una mano de 5 cartas.");
-            System.out.println("0. Salir.");
-            opcion = entrada.nextInt();
+            try {
 
-            switch (opcion) {
-                case 1:
-                    shuffle();
-                    break;
-                case 2:
-                    head();
-                    break;
-                case 3:
-                    pick();
-                    break;
-                case 4:
-                    hand();
-                    break;
-                case 0:
-                    System.out.println("Aplicación finalizada.");
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Opción no válida.");
-                    break;
+                System.out.println("¡Bienvenido al Poker!");
+                System.out.println("Seleciona una opción: ");
+                System.out.println("1. Mezclar Deck.");
+                System.out.println("2. Sacar una carta.");
+                System.out.println("3. Carta al azar.");
+                System.out.println("4. Generar una mano de 5 cartas.");
+                System.out.println("0. Salir.");
+                opcion = entrada.nextInt();
+
+                switch (opcion) {
+                    case 1:
+                        shuffle();
+                        break;
+                    case 2:
+                        head();
+                        break;
+                    case 3:
+                        pick();
+                        break;
+                    case 4:
+                        hand();
+                        break;
+                    case 0:
+                        System.out.println("Aplicación finalizada.");
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Opción no válida.");
+                        break;
+                }
+
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                System.out.println("Opción no válida.");
             }
 
             do {
                 System.out.println("¿Deseas volver a ejecutar el programa?");
                 System.out.println("Escribe si o no: ");
+                entrada.nextLine();
                 res = entrada.next();
                 res = res.toLowerCase();
 
@@ -179,9 +210,10 @@ public class Deck {
                 }
 
             } while (!res.equals("si") && !res.equals("no"));
-            
+
             System.out.println();
 
         } while (res.equals("si"));
+
     }
 }
